@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <title>DeepLearning GPT</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='openai-logo.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='openai-logo.png') }}" class="icon" />
+  <h3>Building Systems with the ChatGPT API</h3>
+  <h4>L5 Process Inputs: Chaining Prompts</h4>
+  <form action="/" method="post">
+    <input type="text" name="user_prompt" placeholder="Hier den Text eingeben" required />
+  </form>
+
+  {% if result %}
+    <div class="result">
+      <strong>Ergebnis:</strong>
+      <p>{{ result | safe }}</p>
+    </div>
+    <div class="token-field">
+      <strong style="display: inline-block;">Verbrauchte Tokens:</strong>
+      <p style="display: inline-block; margin-left: 10px;">{{ token_count }}</p>
+    </div>
+  {% endif %}
+</body>

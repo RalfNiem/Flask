@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatGPT Testseite</title>
+  <style>
+    .container {
+      margin: 20px auto;
+      width: 400px;
+    }
+    .input-field {
+      width: 300px;
+      margin-bottom: 10px;
+    }
+    .result-field {
+      width: 300px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    .token-field {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="font-size: 24pt;">ChatGPT Testseite</h1>
+    <form method="post" action="/submit">
+      <input class="input-field" type="text" name="input_text" placeholder="Hier Text eingeben">
+      <input class="input-field" type="submit" value="Submit">
+    </form>
+    <div class="result-field">
+      <strong>Ergebnis:</strong>
+      <p>{{ result }}</p>
+    </div>
+    <div class="token-field">
+      <strong style="display: inline-block;">Verbrauchte Tokens:</strong>
+      <p style="display: inline-block; margin-left: 10px;">{{ token_count }}</p>
+    </div>
+  </div>
+</body>
+</html>
